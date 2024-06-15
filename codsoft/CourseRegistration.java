@@ -167,3 +167,50 @@ import java.util.Scanner;
                 return false;
             }
         }
+// SQL CODE
+/*
+-- Create database
+        CREATE DATABASE task5;
+
+        -- Use the newly created database
+        USE task5;
+
+        -- Create Course table
+        CREATE TABLE IF NOT EXISTS Course (
+        course_code VARCHAR(10) PRIMARY KEY,
+        title VARCHAR(100) NOT NULL,
+        description TEXT,
+        capacity INT NOT NULL,
+        schedule VARCHAR(50) NOT NULL
+        );
+
+        -- Create Student table
+        CREATE TABLE IF NOT EXISTS Student (
+        student_id VARCHAR(10) PRIMARY KEY,
+        name VARCHAR(100) NOT NULL
+        );
+
+        -- Create Registration table
+        CREATE TABLE IF NOT EXISTS Registration (
+        registration_id INT AUTO_INCREMENT PRIMARY KEY,
+        student_id VARCHAR(10),
+        course_code VARCHAR(10),
+        FOREIGN KEY (student_id) REFERENCES Student(student_id),
+        FOREIGN KEY (course_code) REFERENCES Course(course_code),
+        UNIQUE (student_id, course_code)
+        );
+
+        -- Insert sample data into Course table
+        INSERT INTO Course (course_code, title, description, capacity, schedule)
+        VALUES
+        ('CS101', 'Intro to Computer Science', 'Basics of computer science', 30, 'Mon/Wed 10:00-11:30'),
+        ('MATH101', 'Calculus I', 'Introduction to calculus', 25, 'Tue/Thu 09:00-10:30'),
+        ('ENG101', 'English Literature', 'Study of English literature', 20, 'Mon/Wed 13:00-14:30');
+
+        -- Insert sample data into Student table
+        INSERT INTO Student (student_id, name)
+        VALUES
+        ('S001', 'Alice Johnson'),
+        ('S002', 'Bob Smith'),
+        ('S003', 'Charlie Brown');
+*/
